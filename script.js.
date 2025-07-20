@@ -1,0 +1,30 @@
+function handleChat() {
+  const input = document.getElementById('chat-input').value;
+  const output = document.getElementById('chat-output');
+  if (input) {
+    output.innerHTML = '<p><b>You:</b> ' + input + '</p><p><b>AI:</b> Cool question: ' + input + '! This is a demo.</p>';
+    document.getElementById('chat-input').value = '';
+  } else {
+    output.innerHTML = '<p>Type something!</p>';
+  }
+}
+function handleCodeGen() {
+  const input = document.getElementById('code-input').value;
+  const output = document.getElementById('code-output');
+  if (input) {
+    output.innerHTML = '<p>Code for: ' + input + '</p><p>&lt;html&gt;&lt;body&gt;&lt;h1&gt;' + input + '&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;</p>';
+    document.getElementById('code-input').value = '';
+  } else {
+    output.innerHTML = '<p>Describe a website!</p>';
+  }
+}
+function handleImageGen() {
+  const input = document.getElementById('image-input').value;
+  const output = document.getElementById('image-output');
+  if (input) {
+    output.innerHTML = '<p>Image: ' + input + '</p><img src="https://via.placeholder.com/200" alt="Placeholder"><p>(Demo image)</p>';
+    document.getElementById('image-input').value = '';
+  } else {
+    output.innerHTML = '<p>Describe an image!</p>';
+  }
+}
