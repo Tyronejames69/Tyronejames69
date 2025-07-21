@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baked AI</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+  <header>
+    <h1><i class="fas fa-leaf"></i> Baked AI</h1>
+    <button id="theme-toggle" title="Toggle Theme"><i class="fas fa-moon"></i></button>
+  </header>
+  <nav>
+    <button class="tab active" data-tab="chat">Chat</button>
+    <button class="tab" data-tab="code">Code</button>
+    <button class="tab" data-tab="image">Images</button>
+  </nav>
+  <main>
+    <section id="chat" class="tab-content active">
+      <h2><i class="fas fa-comment"></i> AI Chat</h2>
+      <textarea id="chat-input" placeholder="Ask Baked AI anything..." rows="3"></textarea>
+      <div class="button-group">
+        <button onclick="handleChat()">Send</button>
+        <button onclick="clearChat()">Clear History</button>
+        <button onclick="downloadChat()">Download Chat</button>
+      </div>
+      <p>Responses: <span id="chat-count">0</span></p>
+      <div id="chat-output"></div>
+    </section>
+    <section id="code" class="tab-content">
+      <h2><i class="fas fa-code"></i> Code Generator</h2>
+      <textarea id="code-input" placeholder="Describe your website (e.g., 'Portfolio with navbar')..." rows="3"></textarea>
+      <div class="button-group">
+        <button onclick="handleCodeGen()">Generate</button>
+        <button onclick="downloadCode()">Download Code</button>
+      </div>
+      <p>Responses: <span id="code-count">0</span></p>
+      <div id="code-output"></div>
+    </section>
+    <section id="image" class="tab-content">
+      <h2><i class="fas fa-image"></i> Image Generator</h2>
+      <input type="text" id="image-input" placeholder="Describe an image (e.g., 'Weed leaf sunset')...">
+      <div class="button-group">
+        <button onclick="handleImageGen()">Generate</button>
+        <button onclick="downloadImagePrompt()">Download Prompt</button>
+      </div>
+      <p>Responses: <span id="image-count">0</span></p>
+      <div id="image-output"><img src="https://via.placeholder.com/300" alt="Placeholder"></div>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 Baked AI | Powered by <i class="fas fa-leaf"></i></p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
